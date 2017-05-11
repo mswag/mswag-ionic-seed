@@ -42,7 +42,7 @@ _“Quality is free, but only to those who are willing to pay heavily for it.”
 	$ npm test
 
 	# With code coverage
-	$ npm testWithCoverage
+	$ npm run testWithCoverage
 
 
 ### End-2-End Testing

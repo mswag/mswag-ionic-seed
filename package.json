@@ -12,6 +12,7 @@
     "start": "ionic serve -b",
     "lint": "tslint \"src/**/*.ts\" && tslint \"e2e/**/*.ts\"",
     "test": "karma start ./test-config/karma.conf.js",
+    "testWithCoverage": "karma start ./test-config/karma.conf.js --coverage",
     "e2e": "protractor test-config/protractor.conf.js",
     "webdriver-update": "webdriver-manager update",
     "postinstall": "webdriver-manager update"
