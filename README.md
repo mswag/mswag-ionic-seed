@@ -1,20 +1,47 @@
-Ionic App Base
-=====================
+# MSWAG Ionic Seed
 
-This is the base template for Ionic starter apps.
+Starter seed for Ionic based apps.
 
-## Using this project
+## Runing on devices
 
-Install the latest Ionic CLI:
+On Android:
 
-```bash
-$ npm install -g ionic
-```
+Connect debuggable android device via USB and run:
 
-Then run:
+    $ ionic platform add android
+    $ ionic run android
 
-```bash
-$ ionic start myApp
-```
+On iOS:
 
-More info on this can be found on the Ionic [Getting Started](http://ionicframework.com/docs/v2/getting-started/) page.
+    $ ionic platform add ios
+    $ ionic build ios
+    $ ionic build ios --prod # build for production (With AOT compilation)
+
+Then open the xcode project in `./platforms/ios`, create a provisioning profile
+and run on the device
+
+
+## Quality assurance
+
+_“Quality is free, but only to those who are willing to pay heavily for it.”_ – T. DeMarco and T. Lister
+
+
+### Linting
+
+    $ npm run lint
+
+
+### UNIT Testing
+
+    $ npm test
+
+
+### End-2-End Testing
+
+1. make sure the app is running
+
+    $ npm start
+
+2. And run in another shell:
+
+    $ npm run e2e
