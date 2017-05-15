@@ -15,7 +15,10 @@
     "testWithCoverage": "karma start ./test-config/karma.conf.js --coverage",
     "e2e": "protractor test-config/protractor.conf.js",
     "webdriver-update": "webdriver-manager update",
-    "postinstall": "webdriver-manager update"
+    "postinstall": "webdriver-manager update",
+
+    "precommit": "./pre-commit",
+    "prepush": "npm run lint"
   },
   "config": {
     "ionic_tslint": "tslint.json"
@@ -45,6 +48,7 @@
     "@types/node": "7.0.8",
     "angular2-template-loader": "0.6.2",
     "codelyzer": "2.0.0-beta.4",
+    "husky": "0.13.3",
     "html-loader": "0.4.5",
     "istanbul-instrumenter-loader": "^2.0.0",
     "jasmine-core": "2.5.2",

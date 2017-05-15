@@ -1,0 +1,55 @@
+#!/bin/bash
+
+###
+# Custom git pre-commit hook
+#
+# We check for unallowed strings in the current git status and execute linting
+#
+# This makes sure a developer never commits errorful or unlinted code
+###
+
+CMD_NAME=`basename $0`
+_GIT_DIR=$(git rev-parse --show-toplevel)
+
+for FILE in `git diff-index --name-status HEAD -- '*.ts' | cut -c3-` ; do
+  if [ ! -f $FILE ]
+  then
+    continue
+  fi
+
+  # Check if the file contains `fdescribe`
+  if grep -q 'fdescribe(' $FILE
+  then
+      echo $FILE ' contains "fdescribe("'
+      exit 1
+  fi
+
+  # Check if the file contains `fit`
+  if grep -q 'fit(' $FILE
+  then
+      echo $FILE ' contains "fit("'
+      exit 1
+  fi
+
+  # if egrep -q '^\s*Error\s*=[^=]' $FILE
+  # then
+  #   echo $FILE ' contain "Error ="'
+  #   exit 1
+  # fi
+done
+
+# Check if the individual developer has his own hook
+# https://mpdaugherty.wordpress.com/2010/04/06/how-to-include-git-hooks-in-a-repository-and-still-personalize-your-machine/
+# if [ -f $_GIT_DIR/git_hooks/personal/$CMD_NAME ]
+# then
+#   echo "running customized personal hook: $_GIT_DIR/git_hooks/personal/$CMD_NAME"
+#   # If so, run it. $@ passes all the command line arguments passed to this function
+#   # If the personal hook fails, fail this one as well
+#   if ! $_GIT_DIR/git_hooks/personal/$CMD_NAME $@
+#   then
+#     echo "User hook '$CMD_NAME' failed"
+#     exit 1
+#   fi
+# fi
+
+# exit
