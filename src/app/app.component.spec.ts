@@ -5,7 +5,7 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { MyApp } from './app.component';
+import { MyAppComponent } from './app.component';
 
 describe('MyApp Component', () => {
   let component;
@@ -39,12 +39,12 @@ describe('MyApp Component', () => {
     spyOn(statusBar, 'styleDefault');
     spyOn(splashScreen, 'hide');
 
-    component = new MyApp(platform, statusBar, splashScreen/*, translateService*/);
+    component = new MyAppComponent(platform, statusBar, splashScreen/*, translateService*/);
   }));
 
 
   it('should be created', () => {
-    expect(component instanceof MyApp).toBe(true);
+    expect(component instanceof MyAppComponent).toBe(true);
   });
 
   // it('should init i18n', () => {
