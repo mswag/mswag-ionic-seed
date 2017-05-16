@@ -1,10 +1,41 @@
-# MSWAG Ionic Seed
+# MSWAG Ionic Seed Project
 
-Starter seed for Ionic based apps.
+Starter seed for Ionic (v3) apps
+  * based on the tabs template
+  * following the concepts and setup of the [Ionic unit testing exmaple](https://github.com/driftyco/ionic-unit-testing-example)
+  * integrating test utils of the [Clicker Seed Project](https://github.com/lathonez/clicker)
+  * strictly followong the Ionic project structure and conventions
+
+
+## Features
+Comes fully loaded and configured out of the box with
+  * Unit testing (Karma, Jasmine)
+  * Code Coverage (Istanbul)
+  * E2E testing (Protractor)
+  * Pre-push and pre-commit hooks with Husky
+  * Yarn
+
+
+## Why oh Why
+
+### Why not use any of the Ionic default templates?
+Because it does not come with any of the features listed here.
+
+### Why not use the [Ionic testing template](https://github.com/driftyco/ionic-unit-testing-example)?
+Because it only inlcudes a basic testing setup.
+
+### Why not use the [Clicker Seed Project](https://github.com/lathonez/clicker)?
+Clicker makes heavy use of the ng-cli and therefore comes with a rather complex configuration.
+
 
 ## Install & run
 
+If you have yarn installed (if not, get it [here](https://yarnpkg.com/lang/en/docs/install/))
 	$ yarn install
+	$ npm start
+
+Or use npm:
+	$ npm install
 	$ npm start
 
 
