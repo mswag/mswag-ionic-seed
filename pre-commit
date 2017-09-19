@@ -17,6 +17,9 @@ for FILE in `git diff-index --name-status HEAD -- '*.ts' | cut -c3-` ; do
     continue
   fi
 
+  # Run prettier code formatter
+  prettier --single-quote --write es2015 $FILE
+
   # Check if the file contains `fdescribe`
   if grep -q 'fdescribe(' $FILE
   then
