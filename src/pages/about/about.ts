@@ -6,9 +6,5 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'about.html'
 })
 export class AboutPageComponent {
-
-  constructor(public navCtrl: NavController) {
-
-  }
-
+  constructor(public navCtrl: NavController) {}
 }

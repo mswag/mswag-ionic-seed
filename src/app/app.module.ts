@@ -19,10 +19,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePageComponent,
     TabsPageComponent
   ],
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot(MyAppComponent)
-  ],
+  imports: [BrowserModule, IonicModule.forRoot(MyAppComponent)],
   bootstrap: [IonicApp],
   entryComponents: [
     MyAppComponent,
@@ -34,7 +31,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
 export class AppModule {}
