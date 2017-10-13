@@ -8,12 +8,9 @@ import { HomePageComponent } from '../home/home';
   templateUrl: 'tabs.html'
 })
 export class TabsPageComponent {
-
   tab1Root = HomePageComponent;
   tab2Root = AboutPageComponent;
   tab3Root = ContactPageComponent;
 
-  constructor() {
-
-  }
+  constructor() {}
 }

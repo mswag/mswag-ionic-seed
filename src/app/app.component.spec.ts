@@ -15,33 +15,38 @@ describe('MyApp Component', () => {
 
   let i18nServiceFake;
 
-  beforeEach(async(() => {
-    i18nServiceFake = {setDefaultLang: jasmine.createSpy('i18n spy')};
+  beforeEach(
+    async(() => {
+      i18nServiceFake = { setDefaultLang: jasmine.createSpy('i18n spy') };
 
-    TestBed.configureTestingModule({
-      providers: [
-        // {provide: TranslateService, useValue: i18nServiceFake},
-        StatusBar,
-        SplashScreen,
-        Platform
-      ],
-      imports: [
-        // TranslateModule.forRoot()
-      ]
-    });
+      TestBed.configureTestingModule({
+        providers: [
+          // {provide: TranslateService, useValue: i18nServiceFake},
+          StatusBar,
+          SplashScreen,
+          Platform
+        ],
+        imports: [
+          // TranslateModule.forRoot()
+        ]
+      });
 
-    let platform = TestBed.get(Platform);
-    statusBar = TestBed.get(StatusBar);
-    splashScreen = TestBed.get(SplashScreen);
-    // let translateService = TestBed.get(TranslateService);
+      let platform = TestBed.get(Platform);
+      statusBar = TestBed.get(StatusBar);
+      splashScreen = TestBed.get(SplashScreen);
+      // let translateService = TestBed.get(TranslateService);
 
-    spyOn(platform, 'ready').and.returnValue(Promise.resolve());
-    spyOn(statusBar, 'styleDefault');
-    spyOn(splashScreen, 'hide');
+      spyOn(platform, 'ready').and.returnValue(Promise.resolve());
+      spyOn(statusBar, 'styleDefault');
+      spyOn(splashScreen, 'hide');
 
-    component = new MyAppComponent(platform, statusBar, splashScreen/*, translateService*/);
-  }));
-
+      component = new MyAppComponent(
+        platform,
+        statusBar,
+        splashScreen /*, translateService*/
+      );
+    })
+  );
 
   it('should be created', () => {
     expect(component instanceof MyAppComponent).toBe(true);

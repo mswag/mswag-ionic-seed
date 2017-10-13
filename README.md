@@ -16,6 +16,7 @@ Comes fully loaded and configured out of the box with:
 * Code Coverage ([Istanbul](https://istanbul.js.org/))
 * E2E testing ([Protractor](http://www.protractortest.org/#/))
 * Pre-push and pre-commit hooks ([Husky](https://github.com/typicode/husky/))
+* Pretter Code Formatter ([prettier](https://github.com/prettier/prettier))
 * [Yarn](https://yarnpkg.com/)
 
 
@@ -72,6 +73,13 @@ _“Quality is free, but only to those who are willing to pay heavily for it.”
 ### Linting
 
 	$ npm run lint
+
+
+### Code Formatting
+
+	$ npm run prettier
+
+Will execute the [prettier](https://github.com/prettier/prettier) code formatter. Additionaly, pretter is also added to the pre-commit hook.
 
 
 ### UNIT Testing
