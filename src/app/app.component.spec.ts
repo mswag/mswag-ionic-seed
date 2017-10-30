@@ -5,7 +5,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { MyAppComponent } from './app.component';
+import { App } from './app.component';
 
 describe('MyApp Component', () => {
   let component;
@@ -13,15 +13,11 @@ describe('MyApp Component', () => {
   let statusBar;
   let splashScreen;
 
-  let i18nServiceFake;
-
   beforeEach(
     async(() => {
-      i18nServiceFake = { setDefaultLang: jasmine.createSpy('i18n spy') };
-
       TestBed.configureTestingModule({
         providers: [
-          { provide: TranslateService, useValue: i18nServiceFake },
+          TranslateService,
           StatusBar,
           SplashScreen,
           Platform
@@ -38,7 +34,7 @@ describe('MyApp Component', () => {
       spyOn(statusBar, 'styleDefault');
       spyOn(splashScreen, 'hide');
 
-      component = new MyAppComponent(
+      component = new App(
         platform,
         statusBar,
         splashScreen,
@@ -48,7 +44,7 @@ describe('MyApp Component', () => {
   );
 
   it('should be created', () => {
-    expect(component instanceof MyAppComponent).toBe(true);
+    expect(component instanceof App).toBe(true);
   });
 
   // it('should init i18n', () => {

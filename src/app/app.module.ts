@@ -1,20 +1,19 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-import { MyAppComponent } from './app.component';
-
-import { AboutPageComponent } from '../pages/about/about';
-import { ContactPageComponent } from '../pages/contact/contact';
-import { HomePageComponent } from '../pages/home/home';
-import { TabsPageComponent } from '../pages/tabs/tabs';
-
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+import { App } from './app.component';
+import { AboutPage } from '../pages/about/about';
+import { ContactPage } from '../pages/contact/contact';
+import { HomePage } from '../pages/home/home';
+import { TabsPage } from '../pages/tabs/tabs';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -22,16 +21,16 @@ export function createTranslateLoader(http: HttpClient) {
 
 @NgModule({
   declarations: [
-    MyAppComponent,
-    AboutPageComponent,
-    ContactPageComponent,
-    HomePageComponent,
-    TabsPageComponent
+    App,
+    AboutPage,
+    ContactPage,
+    HomePage,
+    TabsPage
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    IonicModule.forRoot(MyAppComponent),
+    IonicModule.forRoot(App),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -42,11 +41,11 @@ export function createTranslateLoader(http: HttpClient) {
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyAppComponent,
-    AboutPageComponent,
-    ContactPageComponent,
-    HomePageComponent,
-    TabsPageComponent
+    App,
+    AboutPage,
+    ContactPage,
+    HomePage,
+    TabsPage
   ],
   providers: [
     StatusBar,
