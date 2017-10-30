@@ -1,6 +1,6 @@
 import { TestBed, async } from '@angular/core/testing';
 import { Platform } from 'ionic-angular';
-// import { TranslateModule, TranslateService } from 'ng2-translate/ng2-translate';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -13,28 +13,22 @@ describe('MyApp Component', () => {
   let statusBar;
   let splashScreen;
 
-  let i18nServiceFake;
-
   beforeEach(
     async(() => {
-      i18nServiceFake = { setDefaultLang: jasmine.createSpy('i18n spy') };
-
       TestBed.configureTestingModule({
         providers: [
-          // {provide: TranslateService, useValue: i18nServiceFake},
+          TranslateService,
           StatusBar,
           SplashScreen,
           Platform
         ],
-        imports: [
-          // TranslateModule.forRoot()
-        ]
+        imports: [TranslateModule.forRoot()]
       });
 
       let platform = TestBed.get(Platform);
       statusBar = TestBed.get(StatusBar);
       splashScreen = TestBed.get(SplashScreen);
-      // let translateService = TestBed.get(TranslateService);
+      let translateService = TestBed.get(TranslateService);
 
       spyOn(platform, 'ready').and.returnValue(Promise.resolve());
       spyOn(statusBar, 'styleDefault');
@@ -43,7 +37,8 @@ describe('MyApp Component', () => {
       component = new App(
         platform,
         statusBar,
-        splashScreen /*, translateService*/
+        splashScreen,
+        translateService
       );
     })
   );
