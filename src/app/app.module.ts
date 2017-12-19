@@ -20,13 +20,7 @@ export function createTranslateLoader(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [
-    App,
-    AboutPage,
-    ContactPage,
-    HomePage,
-    TabsPage
-  ],
+  declarations: [App, AboutPage, ContactPage, HomePage, TabsPage],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -40,13 +34,7 @@ export function createTranslateLoader(http: HttpClient) {
     })
   ],
   bootstrap: [IonicApp],
-  entryComponents: [
-    App,
-    AboutPage,
-    ContactPage,
-    HomePage,
-    TabsPage
-  ],
+  entryComponents: [App, AboutPage, ContactPage, HomePage, TabsPage],
   providers: [
     StatusBar,
     SplashScreen,

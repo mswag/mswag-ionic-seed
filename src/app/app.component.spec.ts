@@ -16,12 +16,7 @@ describe('MyApp Component', () => {
   beforeEach(
     async(() => {
       TestBed.configureTestingModule({
-        providers: [
-          TranslateService,
-          StatusBar,
-          SplashScreen,
-          Platform
-        ],
+        providers: [TranslateService, StatusBar, SplashScreen, Platform],
         imports: [TranslateModule.forRoot()]
       });
 
@@ -34,12 +29,7 @@ describe('MyApp Component', () => {
       spyOn(statusBar, 'styleDefault');
       spyOn(splashScreen, 'hide');
 
-      component = new App(
-        platform,
-        statusBar,
-        splashScreen,
-        translateService
-      );
+      component = new App(platform, statusBar, splashScreen, translateService);
     })
   );
 
