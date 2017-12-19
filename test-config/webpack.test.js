@@ -42,10 +42,9 @@ module.exports = {
 
   plugins: [
     new webpack.ContextReplacementPlugin(
-      // The (\\|\/) piece accounts for path separators in *nix and Windows
-      /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
-      root('./src'), // location of your src
-      {} // a map of your routes
+      /(ionic-angular)|(angular(\\|\/)core(\\|\/)@angular)/,
+      path.resolve('./src'),
+      {}
     )
   ]
 };
@@ -53,3 +52,4 @@ module.exports = {
 function root(localPath) {
   return path.resolve(__dirname, localPath);
 }
+
