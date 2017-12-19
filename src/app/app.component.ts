@@ -6,13 +6,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { TranslateService } from '@ngx-translate/core';
 
-import { TabsPage } from '../pages/tabs/tabs';
+import { HomePage } from '../pages/home/home';
 
 @Component({
   templateUrl: 'app.html'
 })
-export class App {
-  rootPage: any = TabsPage;
+export class MyApp {
+  rootPage: any = HomePage;
 
   constructor(
     platform: Platform,
