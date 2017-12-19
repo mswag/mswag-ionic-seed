@@ -15,6 +15,10 @@
     "noUnusedParameters": true,
     "noUnusedLocals": true
   },
+  "types": [
+    "jasmine",
+    "node"
+  ],
   "include": [
     "src/**/*.ts"
   ],
