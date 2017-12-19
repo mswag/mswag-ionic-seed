@@ -7,7 +7,7 @@ export class BrowserHelper {
     let fs = require('fs');
     browser.takeScreenshot()
     .then((png) => {
-      let stream = fs.createWriteStream('e2e/screenshots/' + name + '.png');
+      let stream = fs.createWriteStream('test-reports/e2e/screenshots/' + name + '.png');
       stream.write(new Buffer(png, 'base64'));
       stream.end();
     });
