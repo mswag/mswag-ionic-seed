@@ -18,6 +18,7 @@ Comes fully loaded and configured out of the box with:
 * Pre-push and pre-commit hooks ([Husky](https://github.com/typicode/husky/))
 * Pretter Code Formatter ([prettier](https://github.com/prettier/prettier))
 * [Yarn](https://yarnpkg.com/)
+* Translation ([ngx-translate](https://github.com/ngx-translate)) and translation string extraction ([ngx-translate-extract](https://github.com/biesbjerg/ngx-translate-extract))
 
 
 ## Why oh Why
@@ -99,6 +100,20 @@ Will execute the [prettier](https://github.com/prettier/prettier) code formatter
 2. And run in another shell:
 
 	$ npm run e2e
+
+## Translations
+
+1. Define the relevant translation languages in package.json => scripts => extract and update the list in curly braces:
+
+  ... {en,de}.json ...
+
+2. Extract your translation strings by
+
+	$ npm extract
+
+3. Use the Translation Service to set the language, e.g.:
+
+  translate.use('de');
 
 ## License
 
