@@ -2,11 +2,11 @@
 // https://github.com/angular/protractor/blob/master/docs/referenceConf.js
 
 /*global jasmine */
-var SpecReporter = require('jasmine-spec-reporter');
+var SpecReporter = require('jasmine-spec-reporter').SpecReporter
 var HtmlScreenshotReporter = require('protractor-jasmine2-screenshot-reporter');
 
 var screenshotReporter = new HtmlScreenshotReporter({
-  dest: 'e2e/screenshots',
+  dest: 'test-reports/e2e/screenshots',
   filename: 'my-report.html'
 });
 

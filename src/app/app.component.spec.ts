@@ -5,7 +5,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { App } from './app.component';
+import { MyApp } from './app.component';
 
 describe('MyApp Component', () => {
   let component;
@@ -16,12 +16,7 @@ describe('MyApp Component', () => {
   beforeEach(
     async(() => {
       TestBed.configureTestingModule({
-        providers: [
-          TranslateService,
-          StatusBar,
-          SplashScreen,
-          Platform
-        ],
+        providers: [TranslateService, StatusBar, SplashScreen, Platform],
         imports: [TranslateModule.forRoot()]
       });
 
@@ -34,7 +29,7 @@ describe('MyApp Component', () => {
       spyOn(statusBar, 'styleDefault');
       spyOn(splashScreen, 'hide');
 
-      component = new App(
+      component = new MyApp(
         platform,
         statusBar,
         splashScreen,
@@ -44,7 +39,7 @@ describe('MyApp Component', () => {
   );
 
   it('should be created', () => {
-    expect(component instanceof App).toBe(true);
+    expect(component instanceof MyApp).toBe(true);
   });
 
   // it('should init i18n', () => {
