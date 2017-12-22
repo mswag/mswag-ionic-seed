@@ -2,7 +2,7 @@ const webpackConfig = require('./webpack.test.js');
 const path = require('path');
 
 const withCoverage = process.argv.indexOf('--coverage') > -1;
-const reportDir = path.join(__dirname, '/../coverage');
+const reportDir = path.join(__dirname, '/../test-reports/coverage');
 
 if (withCoverage) {
   console.log(`>>> coverage report will be created in ${reportDir}`)

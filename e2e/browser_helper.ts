@@ -2,12 +2,12 @@ import { browser, element, by } from 'protractor';
 let EC = require('protractor').ExpectedConditions;
 
 export class BrowserHelper {
-
   public static takeScreenshot(name = 'screenshot') {
     let fs = require('fs');
-    browser.takeScreenshot()
-    .then((png) => {
-      let stream = fs.createWriteStream('e2e/screenshots/' + name + '.png');
+    browser.takeScreenshot().then(png => {
+      let stream = fs.createWriteStream(
+        'test-reports/e2e/screenshots/' + name + '.png'
+      );
       stream.write(new Buffer(png, 'base64'));
       stream.end();
     });

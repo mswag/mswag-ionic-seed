@@ -11,10 +11,12 @@
     "module": "es2015",
     "moduleResolution": "node",
     "sourceMap": true,
-    "target": "es5",
-    "noUnusedParameters": true,
-    "noUnusedLocals": true
+    "target": "es5"
   },
+  "types": [
+    "jasmine",
+    "node"
+  ],
   "include": [
     "src/**/*.ts"
   ],
