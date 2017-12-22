@@ -45,17 +45,6 @@
     ],
     "no-arg": true,
     "no-bitwise": true,
-    "no-console": [
-      true,
-      "log",
-      "debug",
-      "info",
-      "warn",
-      "error",
-      "time",
-      "timeEnd",
-      "trace"
-    ],
     "no-construct": true,
     "no-debugger": true,
 
