@@ -30,16 +30,18 @@ Because it does not come with any of the features listed here.
 
 ### Why have you not used a more complex project as base, like [Ionic Starter 'Super' template](https://github.com/ionic-team/ionic-starter-super) or [big-top](https://github.com/Robinyo/big-top).
 
-    We prefer to have a minimal setup that we extend later on. Based on our experience, most of the code from the more complex starter projects will be deleted or amended.
+We prefer to have a minimal setup that we extend later on. Based on our experience, most of the code from the more complex starter projects will be deleted or amended.
 
 
 ### Why not use the [Ionic testing template](https://github.com/driftyco/ionic-unit-testing-example)?
-    Because it only inlcudes a basic testing setup.
+
+Because it only inlcudes a basic testing setup.
 
 
 ### Why not use the [Clicker Seed Project](https://github.com/lathonez/clicker) or [big-top](https://github.com/Robinyo/big-top)?
 
-    Clicker and big-top make heavy use of the ng-cli and therefore comes with a rather complex configuration. Both have included features that we do not consider core to any project.
+Clicker and big-top make heavy use of the ng-cli and therefore comes with a rather complex configuration. Both have included features that we do not consider core to any project.
+
 
 ### Why is it not an Ionic starter template that can be used with the Ionic Start Command (ionic start ...)?
 The Ionic starter template focuses very much on the content of the /src folder. But it is very difficult/ not possible to deliver a custom configuration, test setup etc.
