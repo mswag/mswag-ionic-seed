@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { MyApp } from './app.component';
+import { TestUtils } from '../utils/test-utils';
 
 describe('MyApp Component', () => {
   let component;
@@ -15,8 +16,8 @@ describe('MyApp Component', () => {
 
   beforeEach(
     async(() => {
-      TestBed.configureTestingModule({
-        providers: [TranslateService, StatusBar, SplashScreen, Platform],
+      TestUtils.configureIonicTestingModule({
+        providers: [TranslateService, StatusBar, SplashScreen],
         imports: [TranslateModule.forRoot()]
       });
 
@@ -25,7 +26,6 @@ describe('MyApp Component', () => {
       splashScreen = TestBed.get(SplashScreen);
       let translateService = TestBed.get(TranslateService);
 
-      spyOn(platform, 'ready').and.returnValue(Promise.resolve());
       spyOn(statusBar, 'styleDefault');
       spyOn(splashScreen, 'hide');
 
