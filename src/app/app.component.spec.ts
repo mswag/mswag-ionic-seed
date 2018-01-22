@@ -17,7 +17,7 @@ describe('MyApp Component', () => {
   beforeEach(
     async(() => {
       TestUtils.configureIonicTestingModule({
-        providers: [TranslateService, StatusBar, SplashScreen],
+        providers: [TranslateService],
         imports: [TranslateModule.forRoot()]
       });
 
@@ -25,9 +25,6 @@ describe('MyApp Component', () => {
       statusBar = TestBed.get(StatusBar);
       splashScreen = TestBed.get(SplashScreen);
       let translateService = TestBed.get(TranslateService);
-
-      spyOn(statusBar, 'styleDefault');
-      spyOn(splashScreen, 'hide');
 
       component = new MyApp(
         platform,
@@ -41,10 +38,6 @@ describe('MyApp Component', () => {
   it('should be created', () => {
     expect(component instanceof MyApp).toBe(true);
   });
-
-  // it('should init i18n', () => {
-  //   expect(i18nServiceFake.setDefaultLang).toHaveBeenCalledWith('de');
-  // });
 
   it('should style the status bar', () => {
     expect(statusBar.styleDefault).toHaveBeenCalled();

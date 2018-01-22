@@ -3,35 +3,35 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   App,
-  DomController,
+  Form,
+  Keyboard,
   MenuController,
+  DomController,
   NavController,
-  NavParams,
-  LoadingController,
-  GestureController,
-  AlertController,
-  ModalController,
   Platform,
   Config,
-  Keyboard,
-  Form,
+  DeepLinker,
   IonicModule
 } from 'ionic-angular';
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
 import {
-  ConfigMock,
+  AppMock,
+  FormMock,
+  KeyboardMock,
+  MenuControllerMock,
   NavControllerMock,
   PlatformMock,
-  ModalMock
+  ConfigMock,
+  StatusBarMock,
+  SplashScreenMock
 } from 'ionic-mocks';
 import { TranslateModule } from '@ngx-translate/core';
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
 
 /**
  * Class provides some static helper functions to use in specs.
  */
 export class TestUtils {
-
   /**
    * Helper uses Angulars` "Testbed.configureTestingModule(any)" in order to
    * configure an ionic component together with all needed ionic class mocks
@@ -54,22 +54,17 @@ export class TestUtils {
       declarations: [...(moduleDef.declarations || [])],
       providers: [
         ...(moduleDef.providers || []),
-        { provide: ComponentFixtureAutoDetect, useValue: true },
-        App,
-        Form,
-        Keyboard,
+        { provide: App, useFactory: () => AppMock.instance() },
+        { provide: Form, useFactory: () => FormMock.instance() },
+        { provide: Keyboard, useFactory: () => KeyboardMock.instance() },
         DomController,
-        MenuController,
-        NavController,
-        LoadingController,
-        GestureController,
-        AlertController,
-        StatusBar,
-        SplashScreen,
-        { provide: ModalController, useFactory: () => ModalMock.instance() },
-        { provide: NavParams, useFactory: () => NavControllerMock.instance() },
-        { provide: Platform, useFactory: () => PlatformMock.instance() },
-        { provide: Config, useFactory: () => ConfigMock.instance() }
+        { provide: MenuController, useFactory: () => MenuControllerMock.instance() },
+        { provide: NavController, useFactory: () => NavControllerMock.instance() },
+        {provide: Platform, useFactory: () => PlatformMock.instance()},
+        {provide: Config, useFactory: () => ConfigMock.instance()},
+        {provide: DeepLinker, useFactory: () => ConfigMock.instance()},
+        { provide: StatusBar, useFactory: () => StatusBarMock.instance() },
+        { provide: SplashScreen, useFactory: () => SplashScreenMock.instance() },
       ],
       imports: [
         ...(moduleDef.imports || []),
