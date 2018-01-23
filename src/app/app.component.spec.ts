@@ -1,4 +1,4 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { Platform } from 'ionic-angular';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
@@ -10,7 +10,7 @@ import { TestUtils } from '../utils/test-utils';
 
 describe('MyApp Component', () => {
   let component;
-
+  let fixture;
   let statusBar;
   let splashScreen;
 
@@ -18,7 +18,8 @@ describe('MyApp Component', () => {
     async(() => {
       TestUtils.configureIonicTestingModule({
         providers: [TranslateService],
-        imports: [TranslateModule.forRoot()]
+        imports: [TranslateModule.forRoot()],
+        declarations: [MyApp]
       });
 
       let platform = TestBed.get(Platform);

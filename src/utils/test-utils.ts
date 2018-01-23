@@ -11,7 +11,8 @@ import {
   Platform,
   Config,
   DeepLinker,
-  IonicModule
+  IonicModule,
+  GestureController
 } from 'ionic-angular';
 import {
   AppMock,
@@ -58,13 +59,20 @@ export class TestUtils {
         { provide: Form, useFactory: () => FormMock.instance() },
         { provide: Keyboard, useFactory: () => KeyboardMock.instance() },
         DomController,
-        { provide: MenuController, useFactory: () => MenuControllerMock.instance() },
-        { provide: NavController, useFactory: () => NavControllerMock.instance() },
-        {provide: Platform, useFactory: () => PlatformMock.instance()},
-        {provide: Config, useFactory: () => ConfigMock.instance()},
-        {provide: DeepLinker, useFactory: () => ConfigMock.instance()},
+        {
+          provide: MenuController,
+          useFactory: () => MenuControllerMock.instance()
+        },
+        {
+          provide: NavController,
+          useFactory: () => NavControllerMock.instance()
+        },
+        { provide: Platform, useFactory: () => PlatformMock.instance() },
+        { provide: Config, useFactory: () => ConfigMock.instance() },
+        { provide: DeepLinker, useFactory: () => ConfigMock.instance() },
         { provide: StatusBar, useFactory: () => StatusBarMock.instance() },
         { provide: SplashScreen, useFactory: () => SplashScreenMock.instance() },
+        GestureController
       ],
       imports: [
         ...(moduleDef.imports || []),
