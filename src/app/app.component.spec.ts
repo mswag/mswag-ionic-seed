@@ -14,27 +14,23 @@ describe('MyApp Component', () => {
   let statusBar;
   let splashScreen;
 
-  beforeEach(
-    async(() => {
-      TestUtils.configureIonicTestingModule({
-        providers: [TranslateService],
-        imports: [TranslateModule.forRoot()],
-        declarations: [MyApp]
-      });
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      providers: [TranslateService, StatusBar, SplashScreen, Platform],
+      imports: [TranslateModule.forRoot()]
+    });
 
-      let platform = TestBed.get(Platform);
-      statusBar = TestBed.get(StatusBar);
-      splashScreen = TestBed.get(SplashScreen);
-      let translateService = TestBed.get(TranslateService);
+    let platform = TestBed.get(Platform);
+    statusBar = TestBed.get(StatusBar);
+    splashScreen = TestBed.get(SplashScreen);
+    let translateService = TestBed.get(TranslateService);
 
-      component = new MyApp(
-        platform,
-        statusBar,
-        splashScreen,
-        translateService
-      );
-    })
-  );
+    spyOn(platform, 'ready').and.returnValue(Promise.resolve());
+    spyOn(statusBar, 'styleDefault');
+    spyOn(splashScreen, 'hide');
+
+    component = new MyApp(platform, statusBar, splashScreen, translateService);
+  }));
 
   it('should be created', () => {
     expect(component instanceof MyApp).toBe(true);
