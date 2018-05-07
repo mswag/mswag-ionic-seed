@@ -1,4 +1,4 @@
-import { TestBed, ComponentFixtureAutoDetect } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
@@ -71,7 +71,10 @@ export class TestUtils {
         { provide: Config, useFactory: () => ConfigMock.instance() },
         { provide: DeepLinker, useFactory: () => ConfigMock.instance() },
         { provide: StatusBar, useFactory: () => StatusBarMock.instance() },
-        { provide: SplashScreen, useFactory: () => SplashScreenMock.instance() },
+        {
+          provide: SplashScreen,
+          useFactory: () => SplashScreenMock.instance()
+        },
         GestureController
       ],
       imports: [

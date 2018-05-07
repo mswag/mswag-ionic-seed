@@ -1,4 +1,4 @@
-import { TestBed, async, ComponentFixture } from '@angular/core/testing';
+import { TestBed, async } from '@angular/core/testing';
 import { Platform } from 'ionic-angular';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
@@ -6,11 +6,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { MyApp } from './app.component';
-import { TestUtils } from '../utils/test-utils';
 
 describe('MyApp Component', () => {
   let component;
-  let fixture;
   let statusBar;
   let splashScreen;
 
