@@ -1,14 +1,8 @@
 {
   "defaultSeverity": "warning",
-  "extends": [
-    "codelyzer",
-    "tslint-config-standard",
-    "tslint-config-prettier"
-  ],
   "rulesDirectory": [
     "tslint-plugin-prettier"
   ],
-
   "rules": {
     "prettier": [
       true,
@@ -24,5 +18,10 @@
     "no-unused-variable": [
       true
     ]
-  }
+  },
+  "extends": [
+    "codelyzer",
+    "tslint-config-standard",
+    "tslint-config-prettier"
+  ],
 }
