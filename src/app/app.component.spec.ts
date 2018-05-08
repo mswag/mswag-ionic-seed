@@ -15,7 +15,7 @@ describe('MyApp Component', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       providers: [TranslateService, StatusBar, SplashScreen, Platform],
-      imports: [TranslateModule.forRoot()]
+      imports: [TranslateModule.forRoot()],
     });
 
     let platform = TestBed.get(Platform);

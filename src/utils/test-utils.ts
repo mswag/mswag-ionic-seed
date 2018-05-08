@@ -12,7 +12,7 @@ import {
   Config,
   DeepLinker,
   IonicModule,
-  GestureController
+  GestureController,
 } from 'ionic-angular';
 import {
   AppMock,
@@ -23,7 +23,7 @@ import {
   PlatformMock,
   ConfigMock,
   StatusBarMock,
-  SplashScreenMock
+  SplashScreenMock,
 } from 'ionic-mocks';
 import { TranslateModule } from '@ngx-translate/core';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -61,11 +61,11 @@ export class TestUtils {
         DomController,
         {
           provide: MenuController,
-          useFactory: () => MenuControllerMock.instance()
+          useFactory: () => MenuControllerMock.instance(),
         },
         {
           provide: NavController,
-          useFactory: () => NavControllerMock.instance()
+          useFactory: () => NavControllerMock.instance(),
         },
         { provide: Platform, useFactory: () => PlatformMock.instance() },
         { provide: Config, useFactory: () => ConfigMock.instance() },
@@ -73,9 +73,9 @@ export class TestUtils {
         { provide: StatusBar, useFactory: () => StatusBarMock.instance() },
         {
           provide: SplashScreen,
-          useFactory: () => SplashScreenMock.instance()
+          useFactory: () => SplashScreenMock.instance(),
         },
-        GestureController
+        GestureController,
       ],
       imports: [
         ...(moduleDef.imports || []),
@@ -83,8 +83,8 @@ export class TestUtils {
         IonicModule,
         ReactiveFormsModule,
         HttpClientTestingModule,
-        TranslateModule.forRoot()
-      ]
+        TranslateModule.forRoot(),
+      ],
     });
   }
 }
@@ -102,7 +102,7 @@ export namespace TestUtils {
       return {
         fixture: fixture,
         instance: fixture.debugElement.componentInstance,
-        htmlElement: fixture.debugElement.nativeElement
+        htmlElement: fixture.debugElement.nativeElement,
       };
     });
   }
