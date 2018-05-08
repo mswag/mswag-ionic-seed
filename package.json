@@ -10,7 +10,7 @@
     "build": "ionic-app-scripts build",
     "ionic:build": "ionic-app-scripts build",
     "ionic:serve": "ionic-app-scripts serve",
-    "start": "ionic serve -b",
+    "start": "ionic serve -bc",
     "extract": "ngx-translate-extract --input ./src --output ./src/assets/i18n/{en,de}.json --clean --sort",
     "lint": "tslint \"src/**/*.ts\" --project tsconfig.json && tslint \"e2e/**/*.ts\" --project e2e/tsconfig.json",
     "prettier": "prettier --write es2015 \"src/**/*.ts\"",
