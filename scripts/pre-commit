@@ -1,0 +1,35 @@
+#!/bin/bash
+
+###
+# Custom git pre-commit hook
+#
+# We check for unallowed strings in the current git status and execute linting
+#
+# This makes sure a developer never commits errorful or unlinted code
+###
+
+CMD_NAME=`basename $0`
+_GIT_DIR=$(git rev-parse --show-toplevel)
+
+for FILE in `git diff-index --name-status HEAD -- '*.ts' | cut -c3-` ; do
+  if [ ! -f $FILE ]
+  then
+    continue
+  fi
+
+  # Check if the file contains `fdescribe`
+  if grep -q 'fdescribe(' $FILE
+  then
+      echo $FILE ' contains "fdescribe("'
+      exit 1
+  fi
+
+  # Check if the file contains `fit`
+  if grep -q 'fit(' $FILE
+  then
+      echo $FILE ' contains "fit("'
+      exit 1
+  fi
+done
+
+exit
