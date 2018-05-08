@@ -33,7 +33,9 @@ exports.config = {
 
   beforeLaunch: function() {
     require('ts-node').register({
-      project: 'e2e'
+      project: 'tsconfig.json',
+      compilerOptions: { module: 'commonjs'},
+      paths: ['src/**/*.ts', 'e2e/**/*.e2e-spec.ts']
     });
     return new Promise((resolve) => {
       screenshotReporter.beforeLaunch(resolve);
@@ -49,3 +51,4 @@ exports.config = {
     });
   }
 };
+
