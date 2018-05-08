@@ -1,4 +1,4 @@
-import { TestBed, ComponentFixtureAutoDetect } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
@@ -12,7 +12,7 @@ import {
   Config,
   DeepLinker,
   IonicModule,
-  GestureController
+  GestureController,
 } from 'ionic-angular';
 import {
   AppMock,
@@ -23,7 +23,7 @@ import {
   PlatformMock,
   ConfigMock,
   StatusBarMock,
-  SplashScreenMock
+  SplashScreenMock,
 } from 'ionic-mocks';
 import { TranslateModule } from '@ngx-translate/core';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -61,18 +61,21 @@ export class TestUtils {
         DomController,
         {
           provide: MenuController,
-          useFactory: () => MenuControllerMock.instance()
+          useFactory: () => MenuControllerMock.instance(),
         },
         {
           provide: NavController,
-          useFactory: () => NavControllerMock.instance()
+          useFactory: () => NavControllerMock.instance(),
         },
         { provide: Platform, useFactory: () => PlatformMock.instance() },
         { provide: Config, useFactory: () => ConfigMock.instance() },
         { provide: DeepLinker, useFactory: () => ConfigMock.instance() },
         { provide: StatusBar, useFactory: () => StatusBarMock.instance() },
-        { provide: SplashScreen, useFactory: () => SplashScreenMock.instance() },
-        GestureController
+        {
+          provide: SplashScreen,
+          useFactory: () => SplashScreenMock.instance(),
+        },
+        GestureController,
       ],
       imports: [
         ...(moduleDef.imports || []),
@@ -80,8 +83,8 @@ export class TestUtils {
         IonicModule,
         ReactiveFormsModule,
         HttpClientTestingModule,
-        TranslateModule.forRoot()
-      ]
+        TranslateModule.forRoot(),
+      ],
     });
   }
 }
@@ -99,7 +102,7 @@ export namespace TestUtils {
       return {
         fixture: fixture,
         instance: fixture.debugElement.componentInstance,
-        htmlElement: fixture.debugElement.nativeElement
+        htmlElement: fixture.debugElement.nativeElement,
       };
     });
   }

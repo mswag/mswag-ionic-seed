@@ -7,13 +7,16 @@ beforeAll(() => {
 });
 
 afterAll(() => {
-  browser.manage().logs().get('browser')
-  .then((browserLogs) => {
-    // browserLogs is an array of objects with level and message fields
-    browserLogs.forEach((log) => {
-      console['log']('>>> ' + log.message);
+  browser
+    .manage()
+    .logs()
+    .get('browser')
+    .then(browserLogs => {
+      // browserLogs is an array of objects with level and message fields
+      browserLogs.forEach(log => {
+        console['log']('>>> ' + log.message);
+      });
     });
-  });
 });
 
 describe('Login', () => {

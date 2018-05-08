@@ -1,9 +1,12 @@
 {
   "compilerOptions": {
+    "strictNullChecks": true,
     "allowSyntheticDefaultImports": true,
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "lib": [
       "dom",
       "es2015"
@@ -24,7 +27,4 @@
     "node_modules"
   ],
   "compileOnSave": false,
-  "atom": {
-    "rewriteTsconfig": false
-  }
 }

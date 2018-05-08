@@ -1,104 +1,12 @@
 {
-  "rulesDirectory": [
-    "node_modules/codelyzer"
-  ],
+  "defaultSeverity": "warning",
+  "rulesDirectory": ["tslint-plugin-prettier"],
   "rules": {
-    "class-name": true,
-    "comment-format": [
-      true,
-      "check-space"
-    ],
-    "curly": true,
-    "eofline": true,
-    "forin": true,
-    "indent": [
-      true,
-      "spaces"
-    ],
-    "label-position": true,
-
-    "max-line-length": [
-      true,
-      120
-    ],
-    "member-access": false,
-    "member-ordering": [
-      true,
-      {
-        "order": [
-          "public-instance-field",
-          "protected-instance-field",
-          "private-instance-field",
-          "public-instance-method",
-          "protected-instance-method",
-          "private-instance-method",
-          "private-static-field",
-          "public-instance-field",
-          "protected-instance-field",
-          "private-instance-field",
-          "private-constructor",
-          "public-instance-method",
-          "protected-instance-method",
-          "private-instance-method"
-        ]
-      }
-    ],
-    "no-arg": true,
-    "no-bitwise": true,
-    "no-construct": true,
-    "no-debugger": true,
-
+    "prettier": [true],
+    "strict-type-predicates": false,
+    "no-floating-promises": false,
     "no-duplicate-variable": true,
-    "no-empty": false,
-    "no-eval": true,
-    "no-inferrable-types": true,
-    "no-shadowed-variable": true,
-    "no-string-literal": false,
-    "no-switch-case-fall-through": true,
-    "no-trailing-whitespace": true,
-    "no-unused-expression": true,
-    "no-use-before-declare": true,
-    "no-var-keyword": true,
-    "object-literal-sort-keys": false,
-
-    "quotemark": [
-      true,
-      "single"
-    ],
-    "radix": true,
-    "semicolon": true,
-    "triple-equals": [
-      true,
-      "allow-null-check"
-    ],
-    "typedef-whitespace": [
-      true,
-      {
-        "call-signature": "nospace",
-        "index-signature": "nospace",
-        "parameter": "nospace",
-        "property-declaration": "nospace",
-        "variable-declaration": "nospace"
-      }
-    ],
-    "variable-name": false,
-    "whitespace": [
-      true,
-      "check-branch",
-      "check-decl",
-      "check-operator",
-      "check-separator",
-      "check-type"
-    ],
-
-    "use-input-property-decorator": true,
-    "use-output-property-decorator": true,
-    "use-host-property-decorator": true,
-    "no-input-rename": true,
-    "no-output-rename": true,
-    "use-life-cycle-interface": true,
-    "use-pipe-transform-interface": true,
-    "component-class-suffix": false,
-    "directive-class-suffix": true
-  }
+    "no-unused-variable": [true]
+  },
+  "extends": ["codelyzer", "tslint-config-standard", "tslint-config-prettier"]
 }

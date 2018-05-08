@@ -9,7 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { HomePage } from '../pages/home/home';
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: 'app.html',
 })
 export class MyApp {
   rootPage: any = HomePage;
@@ -18,7 +18,7 @@ export class MyApp {
     platform: Platform,
     statusBar: StatusBar,
     splashScreen: SplashScreen,
-    translate: TranslateService
+    translate: TranslateService,
   ) {
     // this language will be used as a fallback when a translation isn't found in the current language
     translate.setDefaultLang('de');
