@@ -1,27 +1,12 @@
 {
   "defaultSeverity": "warning",
-  "rulesDirectory": [
-    "tslint-plugin-prettier"
-  ],
+  "rulesDirectory": ["tslint-plugin-prettier"],
   "rules": {
-    "prettier": [
-      true,
-      {
-        "semi": true,
-        "singleQuote": true,
-        "trailingComma": "all"
-      }
-    ],
+    "prettier": [true],
     "strict-type-predicates": false,
     "no-floating-promises": false,
     "no-duplicate-variable": true,
-    "no-unused-variable": [
-      true
-    ]
+    "no-unused-variable": [true]
   },
-  "extends": [
-    "codelyzer",
-    "tslint-config-standard",
-    "tslint-config-prettier"
-  ],
+  "extends": ["codelyzer", "tslint-config-standard", "tslint-config-prettier"]
 }
