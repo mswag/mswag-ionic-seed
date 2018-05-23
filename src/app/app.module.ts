@@ -26,16 +26,16 @@ export function createTranslateLoader(http: HttpClient) {
       loader: {
         provide: TranslateLoader,
         useFactory: createTranslateLoader,
-        deps: [HttpClient]
-      }
-    })
+        deps: [HttpClient],
+      },
+    }),
   ],
   bootstrap: [IonicApp],
   entryComponents: [MyApp, HomePage],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
-  ]
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+  ],
 })
 export class AppModule {}
