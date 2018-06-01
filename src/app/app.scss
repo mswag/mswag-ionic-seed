@@ -14,3 +14,50 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+
+/* ****************************************************************************
+Version & Media Header for Dev Mode
+**************************************************************************** */
+
+.dev::before {
+  content: attr(version);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  font-weight: normal;
+  font-size: 1.3rem;
+  padding: 5px;
+  color: white;
+  background: lightgrey;
+  opacity: 0.5;
+}
+
+.dev::after {
+  content: "XS";
+  position: absolute;
+  top: 0;
+  right: 0;
+  // width: 30px;
+  z-index: 10001;
+  font-weight: bold;
+  font-size: 1.3rem;
+  padding: 5px;
+  color: white;
+  background-color: transparent;
+  opacity: 0.5;
+  @media screen and (min-width: map-get($grid-max-widths, sm)) {
+    content: "SM";
+  }
+  @media screen and (min-width: map-get($grid-max-widths, md)) {
+    content: "MD";
+  }
+  @media screen and (min-width: map-get($grid-max-widths, lg)) {
+    content: "LG";
+  }
+  @media screen and (min-width: map-get($grid-max-widths, xl)) {
+    content: "XL";
+  }
+}
