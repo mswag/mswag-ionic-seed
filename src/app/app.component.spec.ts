@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { MyApp } from './app.component';
+import { EnvironmentProvider } from '../providers/environment/environment';
 
 describe('MyApp Component', () => {
   let component;
@@ -14,7 +15,13 @@ describe('MyApp Component', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      providers: [TranslateService, StatusBar, SplashScreen, Platform],
+      providers: [
+        TranslateService,
+        StatusBar,
+        SplashScreen,
+        Platform,
+        EnvironmentProvider,
+      ],
       imports: [TranslateModule.forRoot()],
     });
 
@@ -22,12 +29,19 @@ describe('MyApp Component', () => {
     statusBar = TestBed.get(StatusBar);
     splashScreen = TestBed.get(SplashScreen);
     let translateService = TestBed.get(TranslateService);
+    let environment = TestBed.get(EnvironmentProvider);
 
     spyOn(platform, 'ready').and.returnValue(Promise.resolve());
     spyOn(statusBar, 'styleDefault');
     spyOn(splashScreen, 'hide');
 
-    component = new MyApp(platform, statusBar, splashScreen, translateService);
+    component = new MyApp(
+      platform,
+      statusBar,
+      splashScreen,
+      translateService,
+      environment,
+    );
   }));
 
   it('should be created', () => {

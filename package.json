@@ -23,6 +23,7 @@
     "e2e": "run-p -r start protractor",
     "webdriver-update": "webdriver-manager update",
     "postinstall": "webdriver-manager update",
+    "version": "node ./scripts/version.js",
     "precommit":
       "lint-staged && npm run lint && ./scripts/pre-commit && npm run testSingleRun"
   },
@@ -30,7 +31,8 @@
     "*.{ts, js,json,css,md}": ["npm run prettier", "git add"]
   },
   "config": {
-    "ionic_aot_write_to_disk": true
+    "ionic_aot_write_to_disk": true,
+    "ionic_webpack": "./config/webpack.config.js"
   },
   "dependencies": {
     "@angular/animations": "5.2.10",
